@@ -37,3 +37,10 @@ Unmatched characters are skipped one at a time and do not appear in the output. 
 - `new Token(tag, start, end, text)` — `start` is inclusive, `end` is exclusive, both are code-unit offsets into the original input.
 - `scan(input, productions)` — returns `Token[]`.
 - `highlight(input, specs)` — builds `Production` instances from `{ name, pattern }` objects and calls `scan`.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
