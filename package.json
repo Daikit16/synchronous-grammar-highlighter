@@ -1,6 +1,6 @@
 {
   "name": "synchronous-grammar-highlighter",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Finds substrings that match context-free grammar rules and returns them with tags.",
   "type": "module",
   "main": "src/index.js",
